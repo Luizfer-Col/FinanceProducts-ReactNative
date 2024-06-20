@@ -1,79 +1,55 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Proyecto de Aplicación de Productos Financieros
 
-# Getting Started
+## Descripción del Proyecto
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+La aplicación tiene como objetivo principal mostrar los productos financieros ofrecidos por una entidad bancaria. 
 
-## Step 1: Start the Metro Server
+- En la pantalla principal se muestran los productos obtenidos desde una API y se permite realizar búsquedas en el listado de productos, mostrando los resultados de manera dinámica.
+  
+- Cada producto tiene su propia pantalla de visualización, desde la cual se pueden realizar operaciones como editar y eliminar.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- Además, en la pantalla principal existe un botón "Agregar" que lleva a un formulario con validaciones específicas para la creación de un producto.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Características Principales
 
-```bash
-# using npm
-npm start
+- **Renderizado Visual y Abstracción de la Lógica:** Se han utilizado componentes de renderizado visual para separar la lógica de la interfaz de usuario, siguiendo los principios SOLID y manteniendo un código limpio.
 
-# OR using Yarn
-yarn start
-```
+- **Custom Hooks:** Se ha priorizado la reutilización de código mediante el uso de custom hooks para encapsular la lógica compleja y facilitar su uso en diferentes partes de la aplicación.
 
-## Step 2: Start your Application
+- **Servicio Externo de API:** Se ha implementado un servicio externo de conexión a la API para manejar las operaciones CRUD con los productos financieros.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Instalación
 
-### For Android
+1. **Clona el Repositorio:**
+   
 
-```bash
-# using npm
-npm run android
+```git clone https://github.com/tu-usuario/nombre-del-repositorio.git ```
+```cd nombre-del-repositorio```
 
-# OR using Yarn
-yarn android
-```
 
-### For iOS
+2. **Instala las Dependencias:**
+```npm install --legacy-peer-deps```
+o con yarn
+```yarn install --legacy-peer-deps```
 
-```bash
-# using npm
-npm run ios
 
-# OR using Yarn
-yarn ios
-```
+## Ejecución de Pruebas
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Dentro del proyecto, se incluyen pruebas automatizadas que pueden ejecutarse fácilmente:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+1. Para ejecutar las pruebas, utiliza el siguiente comando en la terminal:
 
-## Step 3: Modifying your App
+```npm test```
 
-Now that you have successfully run the app, let's modify it.
+O con yarn:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+```yarn test```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+2. **Archivos de prueba disponibles en la carpeta `__tests__`:**
+- `__tests__/apiService.test.ts`
+- `__tests__/useProductSearch.test.ts`
+- `__tests__/validations.test.ts`
 
-You've successfully run and modified your React Native App. :partying_face:
+Estos archivos contienen las pruebas unitarias para diferentes partes del proyecto, asegurando la funcionalidad correcta y el comportamiento esperado de cada componente y funcionalidad.
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
