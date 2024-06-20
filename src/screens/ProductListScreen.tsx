@@ -7,6 +7,7 @@ import useCustomNavigation from '../hooks/useCustomNavigation';
 import useProductSearch from '../hooks/useSearchProduct';
 import useFetchProducts from '../hooks/useFecthProducts';
 import useProductStore from '../store/productStore';
+import CustomBannerError from '../components/commons/CustomBannerError';
 
 const ProductListScreen = () => {
   const navigation = useCustomNavigation();
@@ -35,7 +36,9 @@ const ProductListScreen = () => {
         onChangeText={setSearchValue}
         searchUnavailable={searchUnavailable}
       />
-      <View style={styles.listContainer}>
+      <View
+        style={[styles.listContainer, error ? styles.containerError : null]}>
+        {error && <CustomBannerError message={error} />}
         <ListProduct products={filteredData} />
       </View>
 
@@ -59,5 +62,8 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 1,
+  },
+  containerError: {
+    justifyContent: 'center',
   },
 });
