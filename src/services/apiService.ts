@@ -1,6 +1,5 @@
 import {Product} from '../types';
-
-const API_URL = 'http://192.168.1.3:3002/bp';
+import {API_URL} from './config';
 
 const ProductService = {
   getAllProducts: async (): Promise<Product[]> => {
@@ -33,10 +32,7 @@ const ProductService = {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
       const data: {data: Product[]} = await response.json();
-      console.log(data);
-
       return data.data;
     } catch (error) {
       throw error;
@@ -65,15 +61,10 @@ const ProductService = {
   },
 
   deleteProduct: async (id: string): Promise<void> => {
-    console.log(id, 'id');
-
     try {
       const response = await fetch(`${API_URL}/products/${id}`, {
         method: 'DELETE',
       });
-
-      console.log('response delete', response);
-
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
