@@ -1,4 +1,3 @@
-// useFetchProducts.ts
 import useProductStore from '../store/productStore';
 
 const useFetchProducts = () => {

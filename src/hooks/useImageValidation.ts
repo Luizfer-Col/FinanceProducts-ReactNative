@@ -15,7 +15,6 @@ const useImageValidation = (imageUrl: string) => {
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.startsWith('image')) {
           setIsImageValid(false);
-          console.log('URL no es de una imagen válida');
         }
 
         setIsImageValid(true);

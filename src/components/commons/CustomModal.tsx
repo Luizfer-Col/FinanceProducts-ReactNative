@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
   modalContent: {
     backgroundColor: 'white',
     width: '100%',
-    // padding: 20,
     borderRadius: 20,
     elevation: 5,
   },
@@ -115,7 +114,6 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'flex-end',
-    // backgroundColor: 'red',
     padding: 15,
     borderBottomColor: '#c4c4c4',
     borderBottomWidth: 0.5,
